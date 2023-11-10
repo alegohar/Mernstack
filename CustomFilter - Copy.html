@@ -1,21 +1,18 @@
 <script>
-const ages = [32, 33, 16, 40,3];
-for (let i=0; i<ages.length; i++)
-{	const result = [];
-	result.push(ages[i]);
-	let newz = check(result);
-	console.log(newz);
-function check(age){
-if(age > 10)
-{
-return age;
-}
+const ages = [32, 33, 16, 40, 3];
+const result = [];
+
+for (let i = 0; i < ages.length; i++) {
+    if (check(ages[i])) {
+        result.push(ages[i]);
+    }
 }
 
+function check(age) {
+    return age > 30;
 }
 
+const newz = result;
 
-
-
-
+console.log(newz);
 </script>
