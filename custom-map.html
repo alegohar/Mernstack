@@ -1,0 +1,20 @@
+<script>
+const a = [1,2,3,4];
+function myMap(arr, callback)
+{
+const newarr = [];
+for (let i=0; i<arr.length; i++)
+{
+const res = callback(arr[i]);
+newarr.push(res);
+}
+return newarr;
+}
+const myres = myMap(a, abc);
+console.log(myres);
+function abc(myresl)
+{
+return myresl*2;
+}
+
+</script>
