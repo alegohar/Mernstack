@@ -1,0 +1,19 @@
+<script>
+const ages = [32, 33, 16, 40, 3];
+
+function checkAdult(age, callback) {
+  let sum = 0;
+  for (let i = 0; i < age.length; i++) {
+    sum += callback(age[i]);
+  }
+  return sum;
+}
+
+function callback(item) {
+  return item;
+}
+
+const t = checkAdult(ages, callback);
+console.log(t);
+
+</script>
