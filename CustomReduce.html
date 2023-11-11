@@ -1,19 +1,23 @@
 <script>
 const ages = [32, 33, 16, 40, 3];
 
-function checkAdult(age, callback) {
-  let sum = 0;
-  for (let i = 0; i < age.length; i++) {
-    sum += callback(age[i]);
+const isEighteen = function (item) {
+  var res = 0;
+  for (let a = 0; a < item.length; a++) {
+    res += item[a];
   }
-  return sum;
+  return res;
+};
+
+const mn = checkAdult(ages, isEighteen);
+console.log(mn);
+
+function checkAdult(age, callback) {
+  const newarr = [];
+  for (let i = 0; i < age.length; i++) {
+    newarr.push(age[i]);
+  }
+
+  return callback(newarr);
 }
-
-function callback(item) {
-  return item;
-}
-
-const t = checkAdult(ages, callback);
-console.log(t);
-
 </script>
