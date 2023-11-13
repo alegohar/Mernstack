@@ -8,11 +8,13 @@ function CustForm() {
 const [email,setEmail] = useState("")
 const[message,setMessage]=useState("")
 const [website,setWebsite]=useState("")
-
+const newArr = [];
 const handleSubmit = (e)=>{
   e.preventDefault()
   swal.fire( 
-  "form submitted",`name: ${name}, email: ${email}, websie: ${website}, message: ${message}`)
+  "form submitted",`name: ${name}, email: ${email}, websie: ${website}, message: ${message}`);
+newArr.splice(0,4,{name},{email},{website},{message});
+console.log(newArr);
 }
   return (
     <>
