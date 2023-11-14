@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch</title>
+  <style>
+    body
+	{
+	  background-color: rgb(238, 238, 238);
+    
+	}
+	.stopwatch {
+      background-color: rgb(238, 238, 238);
+      width: 100vw;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+	.stopwatch-screen
+	{
+	display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    
+	}
+  </style>
+</head>
+<body>
+<div class="stopwatch-screen" style="font-size: 20px; color: black;"></div>
+<div class="stopwatch">
+  
+ <button onclick="startStopwatch()">Start</button>&nbsp;&nbsp;&nbsp;
+  <button onclick="stopStopwatch()">Stop</button>
+</div>
+ 
+<script>
+  let intervalId;
+  let seconds = 0;
+
+  function updateStopwatch() {
+    const element = document.querySelector(".stopwatch-screen");
+    element.innerHTML = seconds++;
+  }
+
+  function startStopwatch() {
+    intervalId = setInterval(updateStopwatch, 1000);
+  }
+
+  function stopStopwatch() {
+    clearInterval(intervalId);
+  }
+</script>
+
+</body>
+</html>
