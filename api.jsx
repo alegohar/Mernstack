@@ -18,6 +18,18 @@ export default function ParentItem(props)
     <div>1231231</div>
     {props.children}
     <button onClick={getCustomersData}>test api</button>
-    {JSON.stringify(myData)}
+    <div className="grid grid-cols-4 gap-4">
+    {myData.map(
+        (devs) => {
+           return <>
+           <div className="grid-cols-4	border-solid border-2 p-[20px]">
+           <div>{devs.title}</div> 
+           <div>{devs.body}</div>
+           </div>
+           </>
+        }
+
+    )}
+    </div>
     </>
 }
