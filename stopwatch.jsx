@@ -10,13 +10,21 @@ import { Result } from 'postcss'
 
  
 function App() {
-  const [posts, setPosts] = useState([]);
+ const [posts, setPosts] = useState([]);
   const [timez, setTimez] = useState(0);
+  const [intervalId, setIntervalId] = useState(0);
+
   const timezstart = () => 
  {
-  setInterval(() => {
+  let nintervalId = setInterval(() => {
     setTimez(sec => sec+1)
   },1000);
+  setIntervalId(nintervalId);
+}
+ const timezStop = () => 
+ {
+  clearInterval(intervalId);
+   
  }
 return <>
 
@@ -24,6 +32,7 @@ return <>
  
   {Math.floor(timez/(60*60))}:{Math.floor(timez / 60)}:{timez % 60}
 <button onClick={timezstart}>start</button>
+<button onClick={timezStop}>Stop</button>
   </div>
   </>
 }
