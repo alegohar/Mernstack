@@ -19,9 +19,8 @@ export default function Circle() {
     
   }
   const genranndomColor = () =>{
-    const elements = Array(setcol.length).fill("", 0);
-
-    newSetcol(elements.map(
+    
+    newSetcol(setcol.map(
         () => {
             return (
                 Math.floor(Math.random() * 222 + 33).toString(16) +
